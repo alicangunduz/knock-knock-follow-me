@@ -1,33 +1,28 @@
 {
-    "manifest_version": 3,
-    "name": "GitHub Takip Kontrolü",
-    "version": "1.0",
-    "description": "GitHub profiline girdiğinizde kullanıcının sizi takip edip etmediğini kontrol etmenizi sağlayan eklentidir. Tamamen ücretsizdir.",
-    "permissions": [
-        "storage",
-        "activeTab",
-        "https://api.github.com/",
-        "https://github.com/"
-    ],
-    "action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "images/icon16.png",
-            "128": "images/icon128.png"
-        }
-    },
-    "icons": {
-        "16": "images/icon16.png",
-        "128": "images/icon128.png"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://github.com/*"
-            ],
-            "js": [
-                "main.js"
-            ]
-        }
-    ]
+  "manifest_version": 3,
+  "name": "GitHub Takip Kontrolü",
+  "version": "1.0",
+  "description": "GitHub profiline girdiğinizde kullanıcının sizi takip edip etmediğini kontrol etmenizi sağlayan eklentidir. Tamamen ücretsizdir.",
+  "permissions": ["storage", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["main.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }
