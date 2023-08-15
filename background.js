@@ -3,17 +3,29 @@ const getToken = async () => {
   return accessToken;
 };
 
+async function getUsername() {
+  const token = await getToken();
+  const response = await fetch("https://api.github.com/user", {
+    headers: {
+      Authorization: `Bearer ${token.accessToken}`,
+    },
+  });
+
+  const data = await response.json();
+  return data.login;
+}
+
 const checkIfFollowing = async (visitedUsername) => {
   try {
     const accessToken = await getToken();
+    const username = await getUsername();
+    console.log(username);
     if (visitedUsername) {
-      const apiUrl = `https://api.github.com/user/following/${visitedUsername}`;
+      const apiUrl = `https://api.github.com/users/${visitedUsername}/following/${username}`;
+
       const response = await fetch(apiUrl, {
-        method: "GET",
         headers: {
           Authorization: `Bearer ${accessToken.accessToken}`,
-          Accept: "application/vnd.github+json",
-          "X-GitHub-Api-Version": "2022-11-28",
         },
       });
       return response.status === 204;
