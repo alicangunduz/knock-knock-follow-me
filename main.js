@@ -12,6 +12,7 @@ const updateUsernameElement = () => {
 
 const initialize = (response, usernameElement) => {
   const badge = document.querySelector("#acg-badge");
+
   if (badge) {
     badge.remove();
     if (response === true) {
@@ -48,7 +49,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     updateUsernameElement();
   }
   if (request.message === `response:true:${currentUsername}`) {
-    console.log(usernameElement);
     initialize(true, usernameElement);
   } else if (request.message === `response:false:${currentUsername}`) {
     initialize(false, usernameElement);
