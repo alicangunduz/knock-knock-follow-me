@@ -10,7 +10,7 @@ Bu eklenti, GitHub profilleri gezerken gezdiğiniz profilin sizi takip edip etme
 
 ## Kullanım Talimatları
 
-1. Eklentiyi projenize dahil edin.
+1. Eklentiyi tarayıcınıza indirin / kurun
 
 2. Eklentinin çalışabilmesi için GitHub API'larına erişim sağlayan bir access token oluşturmanız gerekmektedir. Aşağıdaki adımları takip ederek bu token'ı oluşturabilirsiniz:
 
