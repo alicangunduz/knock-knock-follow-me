@@ -2,8 +2,9 @@
 
 
 ## Nasıl Gözükecek
+![Knock Knock Follow Me ? ](https://github.com/alicangunduz/knock-knock-follow-me/assets/54004830/fea4f7d9-45f7-4df5-a926-b7ddd5ba5974)
 
-![Knock Knock - Takip Ediyor mu ?](https://i.hizliresim.com/7ga984t.jpg)
+
 ## Açıklama
 
 Bu eklenti, GitHub profilleri gezerken gezdiğiniz profilin sizi takip edip etmediğini gösteren bir eklentidir. Eklenti, GitHub API'larına erişim sağlayan bir access token kullanmaktadır. Bu token'ı oluşturmak için aşağıdaki adımları takip edebilirsiniz:
