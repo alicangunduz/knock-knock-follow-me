@@ -11,16 +11,32 @@ const updateUsernameElement = () => {
 };
 
 const initialize = (response, usernameElement) => {
-  if (response === true) {
-    usernameElement.insertAdjacentHTML(
-      "afterend",
-      `<small style="color: #586069; font-size: 12px;">seni takip ediyor ✅</small>`
-    );
+  const badge = document.querySelector("#acg-badge");
+  if (badge) {
+    badge.remove();
+    if (response === true) {
+      usernameElement.insertAdjacentHTML(
+        "afterend",
+        `<small id="acg-badge" style="color: #586069; font-size: 12px;">seni takip ediyor ✅</small>`
+      );
+    } else {
+      usernameElement.insertAdjacentHTML(
+        "afterend",
+        `<small id="acg-badge"  style="color: #586069; font-size: 12px;">seni takip etmiyor ❌</small>`
+      );
+    }
   } else {
-    usernameElement.insertAdjacentHTML(
-      "afterend",
-      `<small style="color: #586069; font-size: 12px;">seni takip etmiyor ❌</small>`
-    );
+    if (response === true) {
+      usernameElement.insertAdjacentHTML(
+        "afterend",
+        `<small id="acg-badge" style="color: #586069; font-size: 12px;">seni takip ediyor ✅</small>`
+      );
+    } else {
+      usernameElement.insertAdjacentHTML(
+        "afterend",
+        `<small id="acg-badge"  style="color: #586069; font-size: 12px;">seni takip etmiyor ❌</small>`
+      );
+    }
   }
 };
 
@@ -30,7 +46,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (currentUsername !== message[2]) {
     currentUsername = message[2];
     updateUsernameElement();
-  } 
+  }
   if (request.message === `response:true:${currentUsername}`) {
     console.log(usernameElement);
     initialize(true, usernameElement);
