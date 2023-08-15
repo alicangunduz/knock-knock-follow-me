@@ -30,7 +30,7 @@ Bu eklenti, GitHub profilleri gezerken gezdiğiniz profilin sizi takip edip etme
 
    h. Token oluşturulduktan sonra, ekranda görünen token'ı kopyalayın.
 
-   f. Eklentiyi açın , "GitHub Access Token" alanına kopyaladığınız token'ı yapıştırın.
+   i. Eklentiyi açın , "GitHub Access Token" alanına kopyaladığınız token'ı yapıştırın.
 
 3. Eklenti artık çalışıyor.
 
