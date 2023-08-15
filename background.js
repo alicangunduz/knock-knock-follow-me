@@ -31,7 +31,6 @@ function getUsernameFromGitHubURL(url) {
   return username;
 }
 
-
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   const url = tab.url;
   if (url.search("://github.com") > -1) {
