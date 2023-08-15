@@ -3,15 +3,113 @@
   <head>
     <meta charset="utf-8" />
     <title>Github Takip Kontrolü</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #22272e;
+      }
+
+      .card {
+        width: 472px;
+        height: 398px;
+        background: #22272e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #github-title {
+        color: #fff;
+        font-family: "Days One", sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+
+      #token-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      label {
+        color: #fff;
+        font-family: "Days One", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 16px;
+        max-width: 90%;
+        text-align: center;
+      }
+
+      #access-token {
+        width: 200%;
+        height: 20px;
+        border-radius: 5px;
+        background: #fff;
+        border: none;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      #save-button {
+        width: 120px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #504099;
+        color: #fff;
+        font-family: "Days One", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+      }
+
+      #result {
+        color: #fff;
+        font-family: "Days One", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+        margin: 20px;
+      }
+      #result a {
+        color: #504099;
+        font-family: "Days One", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Days+One&display=swap"
+    />
   </head>
   <body>
-    <h2 id="github-title">Github Takip Kontrolü</h2>
-    <form id="token-form">
-      <label for="access-token">GitHub AccessToken:</label>
-      <input type="text" id="access-token" required />
-      <button id="save-button" type="button">Kaydet</button>
-    </form>
-    <div id="result"></div>
+    <div class="card">
+      <h2 id="github-title">Github Takip Kontrolü</h2>
+      <form id="token-form">
+        <label for="access-token">GitHub AccessToken Giriniz</label>
+        <input type="text" id="access-token" required />
+        <button id="save-button" type="button">Kaydet</button>
+      </form>
+      <div id="result">
+        AccessToken nasıl alacagınızı bilmiyorsanız
+        <a href="">buraya tıklayın</a>.
+      </div>
+    </div>
 
     <script src="popup.js" type="text/javascript"></script>
   </body>

@@ -1,25 +1,23 @@
-// Get Access Token from Chrome Storge
 let accessToken;
 
-function getAccessToken(callback) {
-  chrome.storage.sync.get("accessToken", (data) => {
-    if (data.accessToken) {
-      accessToken = data.accessToken;
-    } else {
-      accessToken = null;
-    }
-    callback(accessToken);
+async function getAccessToken() {
+  return new Promise((resolve) => {
+    chrome.storage.sync.get("accessToken", (data) => {
+      if (data.accessToken) {
+        accessToken = data.accessToken;
+      } else {
+        accessToken = null;
+      }
+      resolve(accessToken);
+    });
   });
 }
 
-getAccessToken(() => {
-  console.log(accessToken);
-});
-
 async function getUsername() {
+  const token = await getAccessToken();
   const response = await fetch("https://api.github.com/user", {
     headers: {
-      Authorization: `Bearer ${accessToken}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 
