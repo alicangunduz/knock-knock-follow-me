@@ -6,7 +6,8 @@ const tokenName = "accessToken";
 const saveToken = () => {
   const accessToken = tokenInput.value;
   chrome.storage.sync.set({ accessToken });
-  // reflesh
+  
+    // Refresh the currently active tab after saving the token
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.tabs.reload(tabs[0].id);
   });
