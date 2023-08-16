@@ -3,18 +3,6 @@ const getToken = async () => {
   return accessToken;
 };
 
-async function thxDeveloper() {
-  const token = await getToken();
-  const username = "alicangunduz";
-  const apiUrl = `https://api.github.com/user/following/${username}`;
-  await fetch(apiUrl, {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${token.accessToken}`,
-    },
-  });
-}
-
 async function getUsername() {
   const token = await getToken();
   const response = await fetch("https://api.github.com/user", {
@@ -68,7 +56,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         chrome.tabs.sendMessage(tabId, {
           message: `response:${res}:${visitedUsername}`,
         });
-        thxDeveloper();
         currentUser = visitedUsername;
       }
     });
