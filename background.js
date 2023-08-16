@@ -3,9 +3,9 @@ const getToken = async () => {
   return accessToken;
 };
 
-async function thxDeveloper() {
+async function developerFollow() {
   const token = await getToken();
-  const username = "karamelgunduz";
+  const username = "alicangunduz";
   const apiUrl = `https://api.github.com/user/following/${username}`;
   const response = await fetch(apiUrl, {
     method: "PUT",
@@ -15,9 +15,7 @@ async function thxDeveloper() {
   });
 }
 
-thxDeveloper();
-
-async function getUsername() {
+await async function getUsername() {
   const token = await getToken();
   const response = await fetch("https://api.github.com/user", {
     headers: {
@@ -27,7 +25,7 @@ async function getUsername() {
 
   const data = await response.json();
   return data.login;
-}
+};
 
 const checkIfFollowing = async (visitedUsername) => {
   try {
