@@ -18,24 +18,24 @@ const initialize = (response, usernameElement) => {
     if (response === true) {
       usernameElement.insertAdjacentHTML(
         "afterend",
-        `<small id="acg-badge" style="color: #586069; font-size: 12px;">seni takip ediyor ✅</small>`
+        `<small id="acg-badge" style="display: inline-block; background-color: #28A745; color: #fff; padding: 2px 8px; font-size: 12px; border-radius: 4px;">Seni takip ediyor.</small>`
       );
     } else {
       usernameElement.insertAdjacentHTML(
         "afterend",
-        `<small id="acg-badge"  style="color: #586069; font-size: 12px;">seni takip etmiyor ❌</small>`
+        `<small id="acg-badge"  style="display: inline-block; background-color: #DC3545; color: #fff; padding: 2px 8px; font-size: 12px; border-radius: 4px;">Seni takip etmiyor.</small>`
       );
     }
   } else {
     if (response === true) {
       usernameElement.insertAdjacentHTML(
         "afterend",
-        `<small id="acg-badge" style="color: #586069; font-size: 12px;">seni takip ediyor ✅</small>`
+        `<small id="acg-badge" style="display: inline-block; background-color: #28A745; color: #fff; padding: 2px 8px; font-size: 12px; border-radius: 4px;">Seni takip ediyor.</small>`
       );
     } else {
       usernameElement.insertAdjacentHTML(
         "afterend",
-        `<small id="acg-badge"  style="color: #586069; font-size: 12px;">seni takip etmiyor ❌</small>`
+        `<small id="acg-badge"  style="display: inline-block; background-color: #DC3545; color: #fff; padding: 2px 8px; font-size: 12px; border-radius: 4px;">Seni takip etmiyor.</small>`
       );
     }
   }
