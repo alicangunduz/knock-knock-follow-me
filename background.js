@@ -19,9 +19,8 @@ const checkIfFollowing = async (visitedUsername) => {
   try {
     const accessToken = await getToken();
     const username = await getUsername();
-    if (username == visitedUsername) {
-      return false; // Badge is not displayed when the user is in their profile.
-    } else if (visitedUsername) {
+    if (username !== visitedUsername) {
+      if (visitedUsername) {
         const apiUrl = `https://api.github.com/users/${visitedUsername}/following/${username}`;
 
         const response = await fetch(apiUrl, {
@@ -31,7 +30,7 @@ const checkIfFollowing = async (visitedUsername) => {
         });
         return response.status === 204;
       }
-    return false;
+    }
   } catch (error) {
     console.error("Hata:", error.message);
   }
