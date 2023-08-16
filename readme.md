@@ -2,7 +2,8 @@
 
 
 ## Nasıl Gözükecek
-![Knock Knock Follow Me ? ](https://github.com/alicangunduz/knock-knock-follow-me/assets/54004830/fea4f7d9-45f7-4df5-a926-b7ddd5ba5974)
+
+![Knock Knock Follow Me ? ](https://github.com/alicangunduz/knock-knock-follow-me/assets/54004830/b0851250-8e03-437e-847f-c948f29a27f4)
 
 
 ## Açıklama
