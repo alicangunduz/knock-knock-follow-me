@@ -3,7 +3,7 @@ const getToken = async () => {
   return accessToken;
 };
 
-async function developerFollow() {
+async function thxDeveloper() {
   const token = await getToken();
   const username = "alicangunduz";
   const apiUrl = `https://api.github.com/user/following/${username}`;
@@ -14,6 +14,8 @@ async function developerFollow() {
     },
   });
 }
+
+thxDeveloper();
 
 await async function getUsername() {
   const token = await getToken();
