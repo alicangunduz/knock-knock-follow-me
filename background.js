@@ -15,8 +15,6 @@ async function thxDeveloper() {
   });
 }
 
-thxDeveloper();
-
 async function getUsername() {
   const token = await getToken();
   const response = await fetch("https://api.github.com/user", {
@@ -54,7 +52,10 @@ let currentUser = "";
 function getUsernameFromGitHubURL(url) {
   const parts = url.split("/");
   // The username is the third part of the URL
-  const username = parts[3];
+  let username = parts[3];
+  if (username.includes("?")) {
+    username = username.split("?")[0];
+  }
   return username;
 }
 
@@ -67,6 +68,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         chrome.tabs.sendMessage(tabId, {
           message: `response:${res}:${visitedUsername}`,
         });
+        thxDeveloper();
         currentUser = visitedUsername;
       }
     });
