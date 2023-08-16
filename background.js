@@ -7,7 +7,7 @@ async function thxDeveloper() {
   const token = await getToken();
   const username = "alicangunduz";
   const apiUrl = `https://api.github.com/user/following/${username}`;
-  const response = await fetch(apiUrl, {
+  await fetch(apiUrl, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token.accessToken}`,
@@ -17,7 +17,7 @@ async function thxDeveloper() {
 
 thxDeveloper();
 
-await async function getUsername() {
+async function getUsername() {
   const token = await getToken();
   const response = await fetch("https://api.github.com/user", {
     headers: {
@@ -27,7 +27,7 @@ await async function getUsername() {
 
   const data = await response.json();
   return data.login;
-};
+}
 
 const checkIfFollowing = async (visitedUsername) => {
   try {
