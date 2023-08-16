@@ -33,16 +33,17 @@ const checkIfFollowing = async (visitedUsername) => {
   try {
     const accessToken = await getToken();
     const username = await getUsername();
-    console.log(username);
-    if (visitedUsername) {
-      const apiUrl = `https://api.github.com/users/${visitedUsername}/following/${username}`;
+    if (username !== visitedUsername) {
+      if (visitedUsername) {
+        const apiUrl = `https://api.github.com/users/${visitedUsername}/following/${username}`;
 
-      const response = await fetch(apiUrl, {
-        headers: {
-          Authorization: `Bearer ${accessToken.accessToken}`,
-        },
-      });
-      return response.status === 204;
+        const response = await fetch(apiUrl, {
+          headers: {
+            Authorization: `Bearer ${accessToken.accessToken}`,
+          },
+        });
+        return response.status === 204;
+      }
     }
   } catch (error) {
     console.error("Hata:", error.message);
