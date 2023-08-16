@@ -61,3 +61,34 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     });
   }
 });
+
+// Sayfa yenilendiğinde yapılması gereken işlemleri içeren fonksiyon
+async function onPageReload(tabId, tab) {
+  const url = tab.url;
+  if (url.search("://github.com") > -1) {
+    const visitedUsername = getUsernameFromGitHubURL(url);
+    try {
+      const isFollowing = await checkIfFollowing(visitedUsername);
+      chrome.tabs.sendMessage(tabId, {
+        message: `response:${isFollowing}:${visitedUsername}`,
+      });
+    } catch (error) {
+      console.error("Hata:", error.message);
+    }
+  }
+}
+
+// Sayfa yenilendiğinde çalışacak kod
+chrome.webNavigation.onCompleted.addListener((details) => {
+  const tabId = details.tabId;
+  chrome.tabs.get(tabId, (tab) => {
+    onPageReload(tabId, tab);
+  });
+});
+
+// İlk sayfa yüklendiğinde ve tab güncellendiğinde çalışacak kod
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  if (changeInfo.status === "complete") {
+    onPageReload(tabId, tab);
+  }
+});

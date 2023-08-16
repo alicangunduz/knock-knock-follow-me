@@ -3,7 +3,11 @@
   "name": "GitHub Takip Kontrolü",
   "version": "1.0",
   "description": "GitHub profiline girdiğinizde kullanıcının sizi takip edip etmediğini kontrol etmenizi sağlayan eklentidir. Tamamen ücretsizdir.",
-  "permissions": ["storage", "tabs"],
+  "permissions": [
+    "storage",
+    "tabs",
+    "webNavigation"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -20,8 +24,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://github.com/*"],
-      "js": ["main.js"],
+      "matches": [
+        "https://github.com/*"
+      ],
+      "js": [
+        "main.js"
+      ],
       "run_at": "document_idle"
     }
   ]
