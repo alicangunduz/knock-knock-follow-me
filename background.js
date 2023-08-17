@@ -28,8 +28,11 @@ const checkIfFollowing = async (visitedUsername) => {
             Authorization: `Bearer ${accessToken.accessToken}`,
           },
         });
-        return response.status === 204;
+        return response.status;
       }
+
+    } else {
+      return "self";
     }
   } catch (error) {
     console.error("Hata:", error.message);
