@@ -24,7 +24,7 @@ Bu eklenti, GitHub profilleri gezerken gezdiğiniz profilin sizi takip edip etme
 
    d. "Generate new token" butonuna tıklayın.
 
-   e. Token'a bir isim verin (örneğin, "Eklenti Adı Token").
+   e. Token'a bir isim verin (örneğin, "Eklenti Adı Token"). Token süresini süresiz yapmanızı öneririm.    
 
    f. Token'ın erişim izinlerini ayarlayın. Bu eklenti için en az "read:user" izinlerine ihtiyaç duyacaksınız.
 
@@ -34,9 +34,9 @@ Bu eklenti, GitHub profilleri gezerken gezdiğiniz profilin sizi takip edip etme
 
    i. Eklentiyi açın , "GitHub Access Token" alanına kopyaladığınız token'ı yapıştırın.
 
-3. Eklenti artık çalışıyor.
+4. Eklenti artık çalışıyor.
 
-4. Bir profil ziyaret edin ve deneyin !
+5. Bir profil ziyaret edin ve deneyin !
 
 
 
