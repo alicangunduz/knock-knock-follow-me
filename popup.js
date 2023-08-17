@@ -1,6 +1,5 @@
 const tokenInput = document.getElementById("access-token");
 const saveButton = document.getElementById("save-button");
-
 const tokenName = "accessToken";
 
 const saveToken = () => {
@@ -21,5 +20,5 @@ tokenInput.addEventListener("keydown", (e) => {
 });
 
 chrome.storage.sync.get(["accessToken"], (result) => {
-  tokenInput.value = result.accessToken;
+  result.accessToken && (tokenInput.value = result.accessToken);
 });
