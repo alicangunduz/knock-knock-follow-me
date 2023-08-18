@@ -1,7 +1,14 @@
 const tokenInput = document.getElementById("access-token");
 const saveButton = document.getElementById("save-button");
-
 const tokenName = "accessToken";
+const visibilityButton = document.getElementById("togglePassword");
+
+const changeVisibility = () => {
+  const type = tokenInput.type;
+  tokenInput.type = type === "password" ? "text" : "password";
+};
+
+visibilityButton.addEventListener("click", changeVisibility);
 
 const saveToken = () => {
   const accessToken = tokenInput.value;
@@ -21,5 +28,5 @@ tokenInput.addEventListener("keydown", (e) => {
 });
 
 chrome.storage.sync.get(["accessToken"], (result) => {
-  tokenInput.value = result.accessToken;
+  result.accessToken && (tokenInput.value = result.accessToken);
 });

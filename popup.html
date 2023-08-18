@@ -119,19 +119,50 @@
         font-weight: 400;
         line-height: normal;
       }
+
+      #access-token {
+        width: 93%;
+        height: 20px;
+        border-radius: 5px;
+        background: #fff;
+        border: none;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      #token-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .input-container {
+        width: inherit;
+      }
+      #togglePassword {
+        position: relative;
+        left: 90%;
+        top: -37px;
+        cursor: pointer;
+      }
+
     </style>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Days+One&display=swap"
     />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   </head>
   <body>
     <div class="card">
       <h2 id="github-title">Github Takip Kontrolü</h2>
       <form id="token-form">
         <label for="access-token">GitHub AccessToken Giriniz</label>
-        <input type="password" id="access-token" required />
-
+        <div class="input-container">
+          <input placeholder="Lütfen Access Token Girin" type="password" id="access-token" required />
+          <i class="far fa-eye" id="togglePassword" ></i>
+        </div>
         <button id="save-button" type="button">Kaydet</button>
       </form>
       <div id="result">
