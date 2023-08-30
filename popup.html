@@ -75,7 +75,27 @@
         cursor: pointer;
       }
 
+      #reportBugButton {
+        width: 90px;
+        height: 30px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #504099;
+        color: #fff;
+        font-family: "Days One", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+      }
+
       #save-button:hover {
+        background: #fff;
+        color: #504099;
+      }
+
+      #reportBugButton :hover {
         background: #fff;
         color: #504099;
       }
@@ -163,7 +183,8 @@
           <input placeholder="Lütfen Access Token Girin" type="password" id="access-token" required />
           <i class="far fa-eye" id="togglePassword" ></i>
         </div>
-        <button id="save-button" type="button">Kaydet</button>
+        <button id="save-button" type="button">Kaydet</button> <br>
+        <button id="reportBugButton">Report Bug</button>
       </form>
       <div id="result">
         AccessToken nasıl alacagınızı bilmiyorsanız
@@ -195,7 +216,6 @@
           Geliştiren : @alicangunduz , teşekkür için takip edebilirsiniz.
         </p>
       </a>
-
       <div class="card-footer">
         <p class="text">
           <a
