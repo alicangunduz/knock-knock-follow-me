@@ -30,3 +30,10 @@ tokenInput.addEventListener("keydown", (e) => {
 chrome.storage.sync.get(["accessToken"], (result) => {
   result.accessToken && (tokenInput.value = result.accessToken);
 });
+
+reportBugButton.addEventListener("click", () => {
+  const repoUrl = "https://github.com/alicangunduz/knock-knock-follow-me"; // Repo URL
+  const issueUrl = `${repoUrl}/issues/new`; // Yeni sorun oluşturma URL'si
+
+  chrome.tabs.create({ url: issueUrl });
+});

@@ -28,9 +28,9 @@
 
       #github-title {
         color: #fff;
-        font-family: "Days One", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 32px;
-        font-weight: 400;
+        font-weight: 600;
         margin-bottom: 20px;
       }
 
@@ -42,7 +42,7 @@
 
       label {
         color: #fff;
-        font-family: "Days One", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         font-weight: 400;
         margin-bottom: 16px;
@@ -67,8 +67,23 @@
         border-radius: 20px;
         background: #504099;
         color: #fff;
-        font-family: "Days One", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+      }
+
+      #reportBugButton {
+        width: 85px;
+        height: 25px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #504099;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 11px;
         font-weight: 400;
         line-height: normal;
         border: none;
@@ -80,42 +95,61 @@
         color: #504099;
       }
 
+      #reportBugButton:hover {
+        background: #fff;
+        color: #504099;
+      }
+
       #result {
         color: #fff;
-        font-family: "Days One", sans-serif;
-        font-size: 12px;
-        font-weight: 400;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
         line-height: normal;
         margin: 20px;
       }
+
       #result a {
         color: #ffffff;
-        font-family: "Days One", sans-serif;
-        font-size: 12px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
         font-weight: 400;
         line-height: normal;
         text-decoration: underline;
       }
 
+      
+      #result a:hover {
+        color: #aaaaaa;
+        text-decoration: underline;
+      }
+
       .text {
         color: #fff;
-        font-family: "Days One", sans-serif;
-        font-size: 8px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 10px;
         font-weight: 400;
         line-height: normal;
       }
+
       .text a {
         color: #fff;
-        font-family: "Days One", sans-serif;
-        font-size: 8px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 10px;
         font-weight: 400;
         line-height: normal;
         text-decoration: none;
       }
+
+      .text a:hover {
+        color: #aaaaaa;
+        text-decoration: underline;
+      }
+      
       .developer {
         color: #fff;
-        font-family: "Days One", sans-serif;
-        font-size: 13px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
         font-weight: 400;
         line-height: normal;
       }
@@ -150,7 +184,7 @@
     </style>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Days+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   </head>
@@ -163,7 +197,8 @@
           <input placeholder="Lütfen Access Token Girin" type="password" id="access-token" required />
           <i class="far fa-eye" id="togglePassword" ></i>
         </div>
-        <button id="save-button" type="button">Kaydet</button>
+        <button id="save-button" type="button">Kaydet</button> <br>
+        <button id="reportBugButton">Report Bug</button>
       </form>
       <div id="result">
         AccessToken nasıl alacagınızı bilmiyorsanız
@@ -195,7 +230,6 @@
           Geliştiren : @alicangunduz , teşekkür için takip edebilirsiniz.
         </p>
       </a>
-
       <div class="card-footer">
         <p class="text">
           <a
@@ -203,7 +237,9 @@
             target="_blank"
             >Kullanıcı Sözleşmesi</a
           >
+
           •
+          
           <a
             href="https://github.com/alicangunduz/knock-knock-follow-me/blob/main/doc/gizlilik-sozlesmesi.md"
             target="_blank"

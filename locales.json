@@ -1,0 +1,50 @@
+{
+    "tr-TR": {
+        "following": "Seni takip ediyor.",
+        "notFollowing": "Seni takip etmiyor.",
+        "tokenError": "Token boş veya geçersiz.",
+        "unknownError": "Bilinmeyen bir hata oluştu."
+      },
+    "en-US": {
+      "following": "Following you.",
+      "notFollowing": "Not following you.",
+      "tokenError": "Token is empty or invalid.",
+      "unknownError": "An unknown error occurred."
+    },
+    "es-ES": {
+      "following": "Te está siguiendo.",
+      "notFollowing": "No te está siguiendo.",
+      "tokenError": "El token está vacío o es inválido.",
+      "unknownError": "Se produjo un error desconocido."
+    },
+    "fr-FR": {
+      "following": "Je vous suis.",
+      "notFollowing": "Ne pas vous suivre.",
+      "tokenError": "Token is empty or invalid.",
+      "unknownError": "Une erreur inconnue s'est produite."
+    },
+    "zh-CN": {
+      "following": "跟着你",
+      "notFollowing": "未关注您",
+      "tokenError": "令牌为空或无效",
+      "unknownError": "发生未知错误"
+    },
+    "ja": {
+      "following": "あなたについていく",
+      "notFollowing": "フォローしていない",
+      "tokenError": "トークンが空か無効です",
+      "unknownError": "不明なエラーが発生しました"
+    },
+    "ko": {
+      "following": "팔로우 중입니다.",
+      "notFollowing": "나를 팔로우하지 않습니다.",
+      "tokenError": "토큰이 비어 있거나 유효하지 않습니다.",
+      "unknownError": "알 수 없는 오류가 발생했습니다."
+    },
+    "ru": {
+      "following": "Следовать за вами.",
+      "notFollowing": "Не следит за вами.",
+      "tokenError": "Токен пуст или недействителен.",
+      "unknownError": "Произошла неизвестная ошибка."
+    }
+}
